@@ -1,0 +1,19 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "nodemon": "^2.0.4",
+    "ping": "^0.2.3",
+    "telegraf": "^3.38.0",
+    "telegraf-inline-menu": "^5.2.1"
+  }
+}
