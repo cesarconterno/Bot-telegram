@@ -50,7 +50,7 @@ mostrarDefesaCena.action(/btn (\w+)/i, (ctx) => {
     // buscar as inf
     ataque = ctx.match[1]
     detalheDaDefesa = fn.load(ataque)
-    ctx.answerCbQuery(`${JSON.stringify(detalheDaDefesa, null, 4)}`)
+    ctx.answerCbQuery(`${JSON.stringify(detalheDaDefesa, null, 4)}`, true)
     // ctx.replyWithMarkdown(`${JSON.stringify(detalheDaDefesa, null, 4)}\n\n\n\n`)
     // ctx.scene.enter('mostrarDefesa')
 })

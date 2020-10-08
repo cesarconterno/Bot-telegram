@@ -26,6 +26,7 @@ menuCena.action('status',async ctx => {
         var msg = isAlive ? 'online' : 'offline';
         console.log(msg); 
         ctx.answerCbQuery(msg);
+        // ctx.replyWithQuiz('qual?')
     })
 })
 
