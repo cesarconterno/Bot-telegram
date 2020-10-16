@@ -34,12 +34,7 @@ mostrarDefesaCena.enter(async (ctx) => {
     
     await ctx.replyWithMarkdown('Clique em um dos botões', botoesDefesas)
     ctx.reply('Clique em voltar para voltar ao menu principal', btn.voltar)
-    // array.push('dos')
-    // array.push('instrusao')
-    // array.push('trojan')
-    // array.push('worm')
-    // ctx.replyWithMarkdown(`${JSON.stringify(array, null, 4)}`, botoesDefesas)
-    // ctx.scene.enter('menu')
+    
 })
 
 mostrarDefesaCena.action('menu', (ctx) => ctx.scene.enter('menu'))
@@ -47,12 +42,15 @@ mostrarDefesaCena.action('menu', (ctx) => ctx.scene.enter('menu'))
 
 mostrarDefesaCena.action(/btn (\w+)/i, (ctx) => {
 
-    // buscar as inf
-    ataque = ctx.match[1]
-    detalheDaDefesa = fn.load(ataque)
+    const ataque = ctx.match[1]
+    const detalheDaDefesa = fn.load(ataque)
+
+    // const saida = `Nome do Ataque: ${detalheDaDefesa.nome_ataque}
+    // Tipo de Bloqueio: ${detalheDaDefesa.tipo_bloqueio}
+    // Argumentos: ${detalheDaDefesa.argumentos}`
+    // ctx.answerCbQuery(`${JSON.stringify(saida, null, 4)}`, true)
+
     ctx.answerCbQuery(`${JSON.stringify(detalheDaDefesa, null, 4)}`, true)
-    // ctx.replyWithMarkdown(`${JSON.stringify(detalheDaDefesa, null, 4)}\n\n\n\n`)
-    // ctx.scene.enter('mostrarDefesa')
 })
 
 

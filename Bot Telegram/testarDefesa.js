@@ -20,6 +20,7 @@ const ataque = {
         usuario_vitima: '',
         email_vitima: '' 
 }
+let argumentosDoTeste = ''
 
 const testarDefesaCena = new WizardScene('testarDefesa',
     ctx => {
@@ -54,9 +55,20 @@ const testarDefesaCena = new WizardScene('testarDefesa',
     },
     async ctx => {
         ataque.email_vitima = ctx.update.message.text
-
-
-        const argumentosDoTeste = `editavel?tipo_bloqueio=${ataque.tipo_bloqueio}&ip_vitima=${ataque.ip_vitima}&ip_atacante=${ataque.ip_atacante}&usuario_vitima=${ataque.usuario_vitima}&email_vitima=${ataque.email_vitima}`
+        
+        if(ataque.nome_ataque == 'denyofservice'){
+            argumentosDoTeste = `denyofservice?ip_atacante=${ataque.ip_atacante}&ip_vitima=${ataque.ip_vitima}`
+            // http://localhost:4000/denyofservice?ip_atacante=201.17.89.75&ip_vitima=177.103.87.156
+        }else if(ataque.nome_ataque == 'intrusao') {
+            argumentosDoTeste = `intrusao?ip_vitima=${ataque.ip_vitima}&usuario_vitima=${ataque.usuario_vitima}&email_vitima=${ataque.email_vitima}`
+        }else if(ataque.nome_ataque == 'trojan') {
+            argumentosDoTeste = `trojan?ip_vitima=${ataque.ip_vitima}&usuario_vitima=${ataque.usuario_vitima}&email_vitima=${ataque.email_vitima}`
+        }else if(ataque.nome_ataque == 'worm') {
+            argumentosDoTeste = `worm?ip_vitima=${ataque.ip_vitima}&usuario_vitima=${ataque.usuario_vitima}&email_vitima=${ataque.email_vitima}`
+        }else {
+            argumentosDoTeste = `editavel?tipo_bloqueio=${ataque.tipo_bloqueio}&ip_vitima=${ataque.ip_vitima}&ip_atacante=${ataque.ip_atacante}&usuario_vitima=${ataque.usuario_vitima}&email_vitima=${ataque.email_vitima}`
+        }
+        console.log(ataque.nome_ataque)
         // ctx.reply(argumentosDoTeste)
         const aux = await fn.testeDeAtaque(argumentosDoTeste)
         console.log(aux)

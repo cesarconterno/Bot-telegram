@@ -10,15 +10,14 @@ const fn = require('./funcoes')
 const perguntaBloqueio = new Composer()
 const confirmacaoHandler = new Composer()
 
-// const saida = {
-//         ataque: "",
-//         bloqueioPertoVitima: false,
-//         bloqueioPertoAtacante: false
-// }
-
 const defesa = {
     nome_ataque: '',
-    tipo_bloqueio: ''
+    tipo_bloqueio: '',
+    argumentos: [
+        'ip_vitima',
+        'ip_atacante',
+        'tipo_bloqueio'
+    ]
 }
 
 
@@ -70,10 +69,17 @@ const novaDefesaCena = new WizardScene('novaDefesa',
         Insira o <b>nome do ataque</b>:`)
         ctx.wizard.next()
     },
-    ctx => {
+    async ctx => {
         defesa.nome_ataque = ctx.update.message.text
-        ctx.reply('Haverá bloqueio no fluxo de dados?', botoes.tecladoConfirmacaoBloqueio)
-        ctx.wizard.next()
+
+        if(defesa.nome_ataque ==  'worm' || defesa.nome_ataque ==  'denyofservice' || defesa.nome_ataque ==  'intrusao' || defesa.nome_ataque ==  'trojan'){
+            await ctx.reply('esse ataque não pode ser criado por ser um ataque nativo do módulo de Defesa/ Proteção')
+            ctx.scene.enter('menu')
+        }else {
+            ctx.reply('Haverá bloqueio no fluxo de dados?', botoes.tecladoConfirmacaoBloqueio)
+            ctx.wizard.next()
+        }
+        
     },
     perguntaBloqueio,
     confirmacaoHandler

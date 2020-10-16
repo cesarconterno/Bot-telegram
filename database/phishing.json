@@ -1,9 +1,8 @@
 {
-    "nome_ataque": "worm",
+    "nome_ataque": "phishing",
     "tipo_bloqueio": "sem bloqueio",
     "argumentos": [
         "ip_vitima",
-        "usuario_vitima",
-        "email_vitima"
+        "ip_atacante"
     ]
 }

@@ -1,4 +1,8 @@
 {
     "nome_ataque": "denyofservice",
-    "tipo_bloqueio": "próximo do atacante"
+    "tipo_bloqueio": "próximo do atacante",
+    "argumentos": [
+        "ip_vitima",
+        "ip_atacante"
+    ]
 }
