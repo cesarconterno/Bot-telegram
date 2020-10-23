@@ -15,8 +15,7 @@ const defesa = {
     tipo_bloqueio: '',
     argumentos: [
         'ip_vitima',
-        'ip_atacante',
-        'tipo_bloqueio'
+        'ip_atacante'
     ]
 }
 
@@ -51,11 +50,11 @@ perguntaBloqueio.use(ctx => ctx.reply('Escolha uma das opções abaixo'))
 confirmacaoHandler.action('s', async ctx => {
     await ctx.reply('Defesa confirmada!')
     fn.save(defesa, defesa.nome_ataque)
-    await ctx.scene.enter('menu')
+    ctx.scene.enter('menu')
 })
 
-confirmacaoHandler.action('n', ctx => {
-    ctx.reply('Defesa excluída!')
+confirmacaoHandler.action('n', async ctx => {
+    await ctx.reply('Defesa excluída!')
     ctx.scene.enter('menu')
 })
 

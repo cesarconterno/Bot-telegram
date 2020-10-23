@@ -15,7 +15,12 @@ const Markup = require('telegraf/markup')
 const mostrarDefesaCena = new Scene('mostrarDefesa')
 mostrarDefesaCena.enter(async (ctx) => {
 
-    const array = fs.readdirSync('./database')
+    let array = fs.readdirSync('./database')
+
+    array = array.map(file => {
+        aux = file.match(/\w+/g)
+        return aux[0]
+    })
 
     const btt = []
 

@@ -1,0 +1,8 @@
+{
+    "nome_ataque": "testeDeAtaque",
+    "tipo_bloqueio": "sem bloqueio",
+    "argumentos": [
+        "ip_vitima",
+        "ip_atacante"
+    ]
+}

@@ -11,7 +11,7 @@ loginCena.enter(async (ctx) => {
     ctx.replyWithMarkdown(`*LOGIN*\n\n\n\n\nDigite a senha de acesso`)
 })
 
-loginCena.hears(/pizza/i, async (ctx) => {
+loginCena.hears(/5zj0nuwjahnb5rmig4cg/, async (ctx) => {
     await ctx.reply('Login efetuado com sucesso')
     ctx.scene.enter('menu')
 })

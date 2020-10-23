@@ -1,0 +1,8 @@
+{
+    "nome_ataque": "oito",
+    "tipo_bloqueio": "próximo da vítima",
+    "argumentos": [
+        "ip_vitima",
+        "ip_atacante"
+    ]
+}

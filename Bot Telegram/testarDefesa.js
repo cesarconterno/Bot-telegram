@@ -66,7 +66,7 @@ const testarDefesaCena = new WizardScene('testarDefesa',
         }else if(ataque.nome_ataque == 'worm') {
             argumentosDoTeste = `worm?ip_vitima=${ataque.ip_vitima}&usuario_vitima=${ataque.usuario_vitima}&email_vitima=${ataque.email_vitima}`
         }else {
-            argumentosDoTeste = `editavel?tipo_bloqueio=${ataque.tipo_bloqueio}&ip_vitima=${ataque.ip_vitima}&ip_atacante=${ataque.ip_atacante}&usuario_vitima=${ataque.usuario_vitima}&email_vitima=${ataque.email_vitima}`
+            argumentosDoTeste = `editavel?tipo_bloqueio=${ataque.tipo_bloqueio}&ip_vitima=${ataque.ip_vitima}&ip_atacante=${ataque.ip_atacante}&usuario_vitima=${ataque.usuario_vitima}&email_vitima=${ataque.email_vitima}&nome_ataque=${ataque.nome_ataque}`
         }
         console.log(ataque.nome_ataque)
         // ctx.reply(argumentosDoTeste)
