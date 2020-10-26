@@ -48,8 +48,8 @@ perguntaBloqueio.use(ctx => ctx.reply('Escolha uma das opções abaixo'))
 
 
 confirmacaoHandler.action('s', async ctx => {
-    await ctx.reply('Defesa confirmada!')
     fn.save(defesa, defesa.nome_ataque)
+    await ctx.reply('Defesa confirmada!')
     ctx.scene.enter('menu')
 })
 
@@ -71,7 +71,7 @@ const novaDefesaCena = new WizardScene('novaDefesa',
     async ctx => {
         defesa.nome_ataque = ctx.update.message.text
 
-        if(defesa.nome_ataque ==  'worm' || defesa.nome_ataque ==  'denyofservice' || defesa.nome_ataque ==  'intrusao' || defesa.nome_ataque ==  'trojan'){
+        if(defesa.nome_ataque ==  'worm' || defesa.nome_ataque ==  'DOS' || defesa.nome_ataque ==  'intrusao' || defesa.nome_ataque ==  'trojan'){
             await ctx.reply('esse ataque não pode ser criado por ser um ataque nativo do módulo de Defesa/ Proteção')
             ctx.scene.enter('menu')
         }else {

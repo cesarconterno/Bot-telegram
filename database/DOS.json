@@ -1,0 +1,8 @@
+{
+    "nome_ataque": "DOS",
+    "tipo_bloqueio": "próximo do atacante",
+    "argumentos": [
+        "ip_vitima",
+        "ip_atacante"
+    ]
+}

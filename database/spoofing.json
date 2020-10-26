@@ -1,0 +1,8 @@
+{
+    "nome_ataque": "spoofing",
+    "tipo_bloqueio": "próximo da vítima",
+    "argumentos": [
+        "ip_vitima",
+        "ip_atacante"
+    ]
+}

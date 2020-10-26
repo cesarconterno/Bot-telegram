@@ -3,6 +3,7 @@ const Scene = require('telegraf/scenes/base')
 const { enter, leave } = Stage
 const fn = require('./funcoes')
 const btn = require('./botoes')
+const env = require('../.env')
 
 // login
 const loginCena = new Scene('login')
@@ -16,9 +17,13 @@ loginCena.hears(/5zj0nuwjahnb5rmig4cg/, async (ctx) => {
     ctx.scene.enter('menu')
 })
 
+
 loginCena.command('sobre', ctx => {
     ctx.reply(`Esse bot foi desenvolvido como uma interface do usúario com o módulo de Defesa e proteção`, btn.seguinte)
 })
+
+loginCena.on('text', ctx => ctx.reply('senha incorreta, tente novamente'))
+
 loginCena.action('seguinte', async (ctx) => {
     await ctx.reply('A navegação pelo bot se dá preferencialmente pelo botões exibidos no chat de acordo com a cena presente, após a autenticação no login')
     ctx.scene.enter('login')

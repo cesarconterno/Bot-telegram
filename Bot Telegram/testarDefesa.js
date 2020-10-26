@@ -56,7 +56,7 @@ const testarDefesaCena = new WizardScene('testarDefesa',
     async ctx => {
         ataque.email_vitima = ctx.update.message.text
         
-        if(ataque.nome_ataque == 'denyofservice'){
+        if(ataque.nome_ataque == 'DOS'){
             argumentosDoTeste = `denyofservice?ip_atacante=${ataque.ip_atacante}&ip_vitima=${ataque.ip_vitima}`
             // http://localhost:4000/denyofservice?ip_atacante=201.17.89.75&ip_vitima=177.103.87.156
         }else if(ataque.nome_ataque == 'intrusao') {

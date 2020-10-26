@@ -1,5 +1,5 @@
 {
-    "nome_ataque": "denyofservice",
+    "nome_ataque": "cont",
     "tipo_bloqueio": "próximo do atacante",
     "argumentos": [
         "ip_vitima",

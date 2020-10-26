@@ -19,7 +19,7 @@ const menu = Extra.markup(Markup.inlineKeyboard([
     Markup.callbackButton('mostrar defesas', 'mostrarDefesa'),
     Markup.callbackButton('criar nova defesa', 'novaDefesa'),
     Markup.callbackButton('Testar Defesa', 'testarDefesa'),
-    Markup.callbackButton('status da API', 'status'),
+    Markup.callbackButton('status da Módulo', 'status'),
     Markup.callbackButton('voltar', 'login')
 ],{columns: 2}))
 
